@@ -1,0 +1,600 @@
+{
+  "flow": {
+    "Open ID Connect Authentication": {
+      "response": {
+        "specs": [
+          {
+            "ancestorTitles": [
+              "booking-partner-authentication",
+              "authorization-code-flow",
+              "_NoFlow_",
+              "_NoOpportunityType_",
+              "Open ID Connect Authentication"
+            ],
+            "duration": 119,
+            "failureMessages": [],
+            "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Discovery successfully",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should complete Discovery successfully"
+          },
+          {
+            "ancestorTitles": [
+              "booking-partner-authentication",
+              "authorization-code-flow",
+              "_NoFlow_",
+              "_NoOpportunityType_",
+              "Open ID Connect Authentication"
+            ],
+            "duration": 1995,
+            "failureMessages": [],
+            "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should complete Authorization Code Flow successfully"
+          },
+          {
+            "ancestorTitles": [
+              "booking-partner-authentication",
+              "authorization-code-flow",
+              "_NoFlow_",
+              "_NoOpportunityType_",
+              "Open ID Connect Authentication"
+            ],
+            "duration": 0,
+            "failureMessages": [],
+            "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should include expected `https://openactive.io/sellerId` claim in `id_token`",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should include expected `https://openactive.io/sellerId` claim in `id_token`"
+          },
+          {
+            "ancestorTitles": [
+              "booking-partner-authentication",
+              "authorization-code-flow",
+              "_NoFlow_",
+              "_NoOpportunityType_",
+              "Open ID Connect Authentication"
+            ],
+            "duration": 1,
+            "failureMessages": [],
+            "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should return claims within `id_token` as defined in specification",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return claims within `id_token` as defined in specification"
+          },
+          {
+            "ancestorTitles": [
+              "booking-partner-authentication",
+              "authorization-code-flow",
+              "_NoFlow_",
+              "_NoOpportunityType_",
+              "Open ID Connect Authentication"
+            ],
+            "duration": 181,
+            "failureMessages": [],
+            "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete token refresh successfully",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should complete token refresh successfully"
+          }
+        ]
+      }
+    }
+  },
+  "logs": [
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "Credentials",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication",
+      "type": "information",
+      "message": "\nThe test suite is using the credentials below for this test:\n* **clientId**: `62b4f72e-fbf9-4994-9d44-bd953099e134`\n* **clientSecret**: `ei5AF8RN3DgUA5jkzH03KitZOtdKnDpzOax5zppK3jM`\n\nThese credentials were retrieved using Dynamic Client Registration by the Broker Microservice upon startup, using the following configuration within `bookingPartners.primary.authentication`:\n* **initialAccessToken**: `openactive_test_suite_client_12345xaq`\n\n\n\n"
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Discovery successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Discovery successfully",
+      "type": "request",
+      "stage": "Discovery",
+      "request": {
+        "method": "GET",
+        "url": "https://localhost:5003/.well-known/openid-configuration",
+        "requestOptions": {
+          "headers": {
+            "accept": "application/json",
+            "accept-encoding": "gzip, deflate, br",
+            "host": "localhost:5003"
+          }
+        }
+      },
+      "isPending": false,
+      "duration": 0,
+      "response": {
+        "body": {
+          "issuer": "https://localhost:5003",
+          "jwks_uri": "https://localhost:5003/.well-known/openid-configuration/jwks",
+          "authorization_endpoint": "https://localhost:5003/connect/authorize",
+          "token_endpoint": "https://localhost:5003/connect/token",
+          "userinfo_endpoint": "https://localhost:5003/connect/userinfo",
+          "end_session_endpoint": "https://localhost:5003/connect/endsession",
+          "check_session_iframe": "https://localhost:5003/connect/checksession",
+          "revocation_endpoint": "https://localhost:5003/connect/revocation",
+          "introspection_endpoint": "https://localhost:5003/connect/introspect",
+          "device_authorization_endpoint": "https://localhost:5003/connect/deviceauthorization",
+          "frontchannel_logout_supported": true,
+          "frontchannel_logout_session_supported": true,
+          "backchannel_logout_supported": true,
+          "backchannel_logout_session_supported": true,
+          "scopes_supported": [
+            "openid",
+            "openactive-identity",
+            "openactive-openbooking",
+            "openactive-ordersfeed",
+            "offline_access"
+          ],
+          "claims_supported": [
+            "sub",
+            "https://openactive.io/sellerId",
+            "https://openactive.io/sellerName",
+            "https://openactive.io/sellerUrl",
+            "https://openactive.io/sellerLogo",
+            "https://openactive.io/bookingServiceName",
+            "https://openactive.io/bookingServiceUrl",
+            "name",
+            "https://openactive.io/clientId"
+          ],
+          "grant_types_supported": [
+            "authorization_code",
+            "client_credentials",
+            "refresh_token",
+            "implicit",
+            "urn:ietf:params:oauth:grant-type:device_code"
+          ],
+          "response_types_supported": [
+            "code",
+            "token",
+            "id_token",
+            "id_token token",
+            "code id_token",
+            "code token",
+            "code id_token token"
+          ],
+          "response_modes_supported": [
+            "form_post",
+            "query",
+            "fragment"
+          ],
+          "token_endpoint_auth_methods_supported": [
+            "client_secret_basic",
+            "client_secret_post"
+          ],
+          "id_token_signing_alg_values_supported": [
+            "RS256"
+          ],
+          "subject_types_supported": [
+            "public"
+          ],
+          "code_challenge_methods_supported": [
+            "plain",
+            "S256"
+          ],
+          "request_parameter_supported": true,
+          "registration_endpoint": "https://localhost:5003/connect/register"
+        },
+        "status": 200
+      }
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Authorization Code Flow successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+      "type": "request",
+      "stage": "Authorization Code Flow - 1",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/browser-automation-for-auth",
+        "requestOptions": {
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "content-type": "application/json;charset=utf-8",
+            "content-length": 415,
+            "host": "localhost:3000"
+          }
+        },
+        "jsonBody": {
+          "headless": true,
+          "offlineAccess": true,
+          "username": "test1",
+          "password": "test1",
+          "authorizationUrl": "https://localhost:5003/connect/authorize?client_id=62b4f72e-fbf9-4994-9d44-bd953099e134&scope=openid%20openactive-openbooking%20offline_access%20openactive-identity&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcb&code_challenge=GIxwljmvdHPS_VJO6rJQ4WYjxBetv4VIcpDdKf9fCHo&code_challenge_method=S256"
+        }
+      },
+      "isPending": false,
+      "duration": 1900,
+      "response": {
+        "body": {
+          "screenshots": [
+            {
+              "title": "Login page",
+              "url": "https://localhost:5003/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3D62b4f72e-fbf9-4994-9d44-bd953099e134%26scope%3Dopenid%2520openactive-openbooking%2520offline_access%2520openactive-identity%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fcb%26code_challenge%3DGIxwljmvdHPS_VJO6rJQ4WYjxBetv4VIcpDdKf9fCHo%26code_challenge_method%3DS256",
+              "image": "[object Promise]"
+            },
+            {
+              "title": "Authorization page",
+              "url": "https://localhost:5003/consent?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3D62b4f72e-fbf9-4994-9d44-bd953099e134%26scope%3Dopenid%2520openactive-openbooking%2520offline_access%2520openactive-identity%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fcb%26code_challenge%3DGIxwljmvdHPS_VJO6rJQ4WYjxBetv4VIcpDdKf9fCHo%26code_challenge_method%3DS256",
+              "image": "[object Promise]"
+            }
+          ],
+          "callbackUrl": "/cb?code=85B7B01F424FD257DBF988C66864380FD60441B60E8762E6BE96CBD6F543BD55&scope=openid%20openactive-openbooking%20offline_access%20openactive-identity&session_state=OzJ0aFM336FdQ4WS2PeP5pQrcK-ZnBSqqbH-hnqzvp8.E9B6A202A979456AFD8FBC691F7E5DA2",
+          "requiredConsent": true
+        },
+        "status": 200
+      }
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Authorization Code Flow successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+      "type": "request",
+      "stage": "Authorization Code Flow - 2",
+      "request": {
+        "method": "POST",
+        "url": "https://localhost:5003/connect/token",
+        "requestOptions": {
+          "headers": {
+            "authorization": "Basic NjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0OmVpNUFGOFJOM0RnVUE1amt6SDAzS2l0Wk90ZEtuRHB6T2F4NXpwcEszak0=",
+            "accept": "application/json",
+            "content-type": "application/x-www-form-urlencoded",
+            "content-length": "205",
+            "accept-encoding": "gzip, deflate, br",
+            "host": "localhost:5003"
+          }
+        },
+        "jsonBody": "grant_type=authorization_code&code=85B7B01F424FD257DBF988C66864380FD60441B60E8762E6BE96CBD6F543BD55&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcb&code_verifier=AbxBniAUOe7CrdjJOv5OAA3B1Iq-d_W1lCxwqUWJ5dw"
+      },
+      "response": {
+        "body": {
+          "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkIwNEY3QjkxREUzQjk0NzhDNjE4MzNGQjI0QUE1Q0RCIiwidHlwIjoiSldUIn0.eyJuYmYiOjE2NTg0ODY3NjUsImV4cCI6MTY1ODQ4NzA2NSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMyIsImF1ZCI6IjYyYjRmNzJlLWZiZjktNDk5NC05ZDQ0LWJkOTUzMDk5ZTEzNCIsImlhdCI6MTY1ODQ4Njc2NSwiYXRfaGFzaCI6IjhBdUxlVXRjWFQtMXdUNXRtcHZuM2ciLCJzaWQiOiJDNzZGODhCN0ExQ0NCOUE0ODlDOUI5NENEQ0E1NUU0QiIsInN1YiI6IjEwMCIsImF1dGhfdGltZSI6MTY1ODQ4Njc2NSwiaWRwIjoibG9jYWwiLCJodHRwczovL29wZW5hY3RpdmUuaW8vc2VsbGVyTmFtZSI6IkFjbWUgRml0bmVzcyBMdGQiLCJodHRwczovL29wZW5hY3RpdmUuaW8vc2VsbGVySWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxL2FwaS9pZGVudGlmaWVycy9zZWxsZXJzLzEiLCJodHRwczovL29wZW5hY3RpdmUuaW8vc2VsbGVyVXJsIjoiaHR0cHM6Ly93d3cuZXhhbXBsZS5jb20iLCJodHRwczovL29wZW5hY3RpdmUuaW8vc2VsbGVyTG9nbyI6Imh0dHBzOi8vcGxhY2VraXR0ZW4uY29tLzY0MC8zNjAiLCJhbXIiOlsicHdkIl19.c28jrRvoY3RxrZPIDJ7EC1eYwmv2rQfwpLFn5HRMc88SeGlKxjP_DSIiWI3CpfMTk9V75aNcd0DCCGpm0IecVUdFawzb75PlRVP49UtkyIHOftgCWFQHL7hEjbCPtk-3c-rMANyFeULleivZqUMA7Df9UkV8EdA2g_jrPTKatme-38xsAISPOIhG6gO2m5kD1RVtlyEYW4i2ZOOTD6F9bOvttmKmIWiNWRj8OGHX_YgHL_V9dqyZ5PTlDxEg5aUwZiVPWdNyJw03c3FrU7vQF0PeYSxd1orruXyRUPCt1aUseOnN7p1BqOUhUWNF82KOk0X5Ny-GA--XGTE89gp2tw",
+          "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkIwNEY3QjkxREUzQjk0NzhDNjE4MzNGQjI0QUE1Q0RCIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTg0ODY3NjUsImV4cCI6MTY1ODQ5MDM2NSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMyIsImF1ZCI6Im9wZW5ib29raW5nIiwiY2xpZW50X2lkIjoiNjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0IiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL2NsaWVudElkIjoiNjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0Iiwic3ViIjoiMTAwIiwiYXV0aF90aW1lIjoxNjU4NDg2NzY1LCJpZHAiOiJsb2NhbCIsImh0dHBzOi8vb3BlbmFjdGl2ZS5pby9zZWxsZXJJZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEvYXBpL2lkZW50aWZpZXJzL3NlbGxlcnMvMSIsImp0aSI6IjhCRUM0RUZDMDY1MzAyNzJFMERGQTRFQTNFNzQyMDcxIiwic2lkIjoiQzc2Rjg4QjdBMUNDQjlBNDg5QzlCOTRDRENBNTVFNEIiLCJpYXQiOjE2NTg0ODY3NjUsInNjb3BlIjpbIm9wZW5pZCIsIm9wZW5hY3RpdmUtb3BlbmJvb2tpbmciLCJvcGVuYWN0aXZlLWlkZW50aXR5Iiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.TkDdddegwH46GwMBMN5a52dcJcoBn-PJCebad8WfviP24aFFE_ZdGdlOz-sUJZ32nDI-EpgNw3prCKWtZSbvxm4rZvJhNj_n6wqRtM23UaRQU7Xq7dZWFyrn7COa0MRoaHtO9grsd2N_T7RsI8j3HVaFFnUslGK6o17DXcTxrQD6uk1344d_BU0BpdquS24XK-e15WJgfOUVGLZOxyHZj9KRZXWf5UEvV3nSsIhYTYPowNzl4_3aY4vV2th-ZKmxmwpjoR6FeynjZkpTA8SOkHaddp-CtEUbidLAmhsf98Uh2emAOkMCR_doSbBxhxtyVl1wey-MSfCG0OqzU9jqRw",
+          "expires_in": 3600,
+          "token_type": "Bearer",
+          "refresh_token": "FDC8C9FC3C59CD26D082A4C714B53F365EB5D697EF0C2EEFB495F7F85396B2ED",
+          "scope": "openid openactive-openbooking offline_access openactive-identity"
+        },
+        "status": 200
+      },
+      "isPending": false,
+      "duration": 0
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Authorization Code Flow successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+      "type": "request",
+      "stage": "Authorization Code Flow - 3",
+      "request": {
+        "method": "GET",
+        "url": "https://localhost:5003/.well-known/openid-configuration/jwks",
+        "requestOptions": {
+          "headers": {
+            "accept": "application/json",
+            "accept-encoding": "gzip, deflate, br",
+            "host": "localhost:5003"
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "keys": [
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "B04F7B91DE3B9478C61833FB24AA5CDB",
+              "e": "AQAB",
+              "n": "yZO68vCGrvfBQ5R1z0DVCRAADOWeF3aLlhOaz1Je1SnmohmmlO-1F1hkRM_4MJtR5aECMxMz-MUW1nBCPmUrH0h_rrdCdDdlk8vTHki0ixK-gO73W2ZscOCZ6L2fZ2Oqz0_I840cnSCv55zpiOk9oGJL9TEsLAWYAIyQheaqZO3BkqImuBFmaLVTckvaZeONjHDQa01rxEjRQByir6oYSZPJy54XuRQJaPuCVNeOW8r0R9rKUQf9nl7tnVvhCsU3q1-UPrs8ZW_kaYXuYQJJMk392jX6XNm6czehIYM-O8Z5eGFdR3WW7IAWYEmqTCxrCRuuKU-EEcKOwksx8gBPgQ",
+              "alg": "RS256"
+            }
+          ]
+        },
+        "status": 200
+      },
+      "isPending": false,
+      "duration": 0
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Authorization Code Flow successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+      "type": "result",
+      "stage": "Authorization Code Flow - Claims",
+      "description": "`id_token` claims:",
+      "jsonResult": {
+        "nbf": 1658486765,
+        "exp": 1658487065,
+        "iss": "https://localhost:5003",
+        "aud": "62b4f72e-fbf9-4994-9d44-bd953099e134",
+        "iat": 1658486765,
+        "at_hash": "8AuLeUtcXT-1wT5tmpvn3g",
+        "sid": "C76F88B7A1CCB9A489C9B94CDCA55E4B",
+        "sub": "100",
+        "auth_time": 1658486765,
+        "idp": "local",
+        "https://openactive.io/sellerName": "Acme Fitness Ltd",
+        "https://openactive.io/sellerId": "https://localhost:5001/api/identifiers/sellers/1",
+        "https://openactive.io/sellerUrl": "https://www.example.com",
+        "https://openactive.io/sellerLogo": "https://placekitten.com/640/360",
+        "amr": [
+          "pwd"
+        ]
+      }
+    },
+    {
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete token refresh successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete token refresh successfully",
+      "type": "request",
+      "stage": "Refresh Token",
+      "request": {
+        "method": "POST",
+        "url": "https://localhost:5003/connect/token",
+        "requestOptions": {
+          "headers": {
+            "authorization": "Basic NjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0OmVpNUFGOFJOM0RnVUE1amt6SDAzS2l0Wk90ZEtuRHB6T2F4NXpwcEszak0=",
+            "accept": "application/json",
+            "content-type": "application/x-www-form-urlencoded",
+            "content-length": "103",
+            "accept-encoding": "gzip, deflate, br",
+            "host": "localhost:5003"
+          }
+        },
+        "jsonBody": "grant_type=refresh_token&refresh_token=FDC8C9FC3C59CD26D082A4C714B53F365EB5D697EF0C2EEFB495F7F85396B2ED"
+      },
+      "isPending": false,
+      "duration": 100,
+      "response": {
+        "body": {
+          "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkIwNEY3QjkxREUzQjk0NzhDNjE4MzNGQjI0QUE1Q0RCIiwidHlwIjoiSldUIn0.eyJuYmYiOjE2NTg0ODY3NjYsImV4cCI6MTY1ODQ4NzA2NiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMyIsImF1ZCI6IjYyYjRmNzJlLWZiZjktNDk5NC05ZDQ0LWJkOTUzMDk5ZTEzNCIsImlhdCI6MTY1ODQ4Njc2NiwiYXRfaGFzaCI6ImpyQlYtOFQ1dVR1aTh1amdacFkwOEEiLCJzdWIiOiIxMDAiLCJhdXRoX3RpbWUiOjE2NTg0ODY3NjUsImlkcCI6ImxvY2FsIiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL3NlbGxlck5hbWUiOiJBY21lIEZpdG5lc3MgTHRkIiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL3NlbGxlcklkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMS9hcGkvaWRlbnRpZmllcnMvc2VsbGVycy8xIiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL3NlbGxlclVybCI6Imh0dHBzOi8vd3d3LmV4YW1wbGUuY29tIiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL3NlbGxlckxvZ28iOiJodHRwczovL3BsYWNla2l0dGVuLmNvbS82NDAvMzYwIiwiYW1yIjpbInB3ZCJdfQ.tQ4SWIWBMMwPpVuPu9aZGtGptlM9v8SXgs3SqmTawNeAxw0CaPOSs8svTZT5IIb6FrUHaIGYGPABC1ldjTVerrCP7GCT0gPRvUVlbw_K5cQfziGOfl-2nrKARq_JfnyB85JB-XpackZCkoVIKlrZRui5gV8AZceMtVeU6zKvtE75YVWTZ3UHFEPNS8VCSXxJbf6z1ugT-KAiXIur8CrGz_r1BKCbVHMhLSHxJJ9KHpmoGGDMWyjELoHlxCj_tb6T6QvixPBQ5sj8G_Am9LmUxSrtLh9TkjzHcUNZjn3kD5Hk_QK7LJi0sA9bCZ73RR6VhVvy4IA6gPb2ZVRT-RAcvA",
+          "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkIwNEY3QjkxREUzQjk0NzhDNjE4MzNGQjI0QUE1Q0RCIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTg0ODY3NjYsImV4cCI6MTY1ODQ5MDM2NiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMyIsImF1ZCI6Im9wZW5ib29raW5nIiwiY2xpZW50X2lkIjoiNjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0IiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL2NsaWVudElkIjoiNjJiNGY3MmUtZmJmOS00OTk0LTlkNDQtYmQ5NTMwOTllMTM0Iiwic3ViIjoiMTAwIiwiYXV0aF90aW1lIjoxNjU4NDg2NzY1LCJpZHAiOiJsb2NhbCIsImh0dHBzOi8vb3BlbmFjdGl2ZS5pby9zZWxsZXJJZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEvYXBpL2lkZW50aWZpZXJzL3NlbGxlcnMvMSIsImp0aSI6IjhBQTA4QThEMkQxMjFEMzc0NEJFNTlFMjdGNENERjQ0IiwiaWF0IjoxNjU4NDg2NzY2LCJzY29wZSI6WyJvcGVuaWQiLCJvcGVuYWN0aXZlLW9wZW5ib29raW5nIiwib3BlbmFjdGl2ZS1pZGVudGl0eSIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.uryqNPamzVBkGzsWfZUe-PAUi5maQQ-OV9GiSCvhDJ1yWpi6aa5zafRBzX8QVpzZirV-B0_Ff_ViavugeZtIdxXd_MrxDdrOoUVH22ZBIwxQO70FWvFS5Bxa1_XT5fTxoZyt-VPBblTm2hi4ChG6PtmusfrXmy3bLzIxauq6WcMSD1fBj0u7htvJkLNO-oRn5g5qatLM-P_cfnoO55As2Emx4g0LaV6bH1yQq2Wexw9S204mv_NFbe0bYqWj8-Gm_aRmpHdifxWSmBisSDym5ec5AA_iZzml09ltqg9K_JG6p3gz3d17c5XrArSH53VdOALQIPpbpQXwodBQLHO-Rg",
+          "expires_in": 3600,
+          "token_type": "Bearer",
+          "refresh_token": "DAC04F54B4A6F2CBB437445195BF39A2A274A0CD27A50711A35263F07E813741",
+          "scope": "openid openactive-openbooking openactive-identity offline_access"
+        },
+        "status": 200
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Discovery successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Discovery successfully",
+      "spec": {
+        "ancestorTitles": [
+          "booking-partner-authentication",
+          "authorization-code-flow",
+          "_NoFlow_",
+          "_NoOpportunityType_",
+          "Open ID Connect Authentication"
+        ],
+        "duration": 119,
+        "failureMessages": [],
+        "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Discovery successfully",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should complete Discovery successfully"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete Authorization Code Flow successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+      "spec": {
+        "ancestorTitles": [
+          "booking-partner-authentication",
+          "authorization-code-flow",
+          "_NoFlow_",
+          "_NoOpportunityType_",
+          "Open ID Connect Authentication"
+        ],
+        "duration": 1995,
+        "failureMessages": [],
+        "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete Authorization Code Flow successfully",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should complete Authorization Code Flow successfully"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should include expected `https://openactive.io/sellerId` claim in `id_token`",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should include expected `https://openactive.io/sellerId` claim in `id_token`",
+      "spec": {
+        "ancestorTitles": [
+          "booking-partner-authentication",
+          "authorization-code-flow",
+          "_NoFlow_",
+          "_NoOpportunityType_",
+          "Open ID Connect Authentication"
+        ],
+        "duration": 0,
+        "failureMessages": [],
+        "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should include expected `https://openactive.io/sellerId` claim in `id_token`",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should include expected `https://openactive.io/sellerId` claim in `id_token`"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should return claims within `id_token` as defined in specification",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should return claims within `id_token` as defined in specification",
+      "spec": {
+        "ancestorTitles": [
+          "booking-partner-authentication",
+          "authorization-code-flow",
+          "_NoFlow_",
+          "_NoOpportunityType_",
+          "Open ID Connect Authentication"
+        ],
+        "duration": 1,
+        "failureMessages": [],
+        "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should return claims within `id_token` as defined in specification",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return claims within `id_token` as defined in specification"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "booking-partner-authentication",
+        "authorization-code-flow",
+        "_NoFlow_",
+        "_NoOpportunityType_",
+        "Open ID Connect Authentication"
+      ],
+      "title": "should complete token refresh successfully",
+      "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete token refresh successfully",
+      "spec": {
+        "ancestorTitles": [
+          "booking-partner-authentication",
+          "authorization-code-flow",
+          "_NoFlow_",
+          "_NoOpportunityType_",
+          "Open ID Connect Authentication"
+        ],
+        "duration": 181,
+        "failureMessages": [],
+        "fullName": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_ Open ID Connect Authentication should complete token refresh successfully",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should complete token refresh successfully"
+      }
+    }
+  ],
+  "timestamp": "Fri Jul 22 2022 10:46:03 GMT+0000 (Coordinated Universal Time)",
+  "config": {
+    "testCategory": "authentication",
+    "testFeature": "booking-partner-authentication",
+    "testFeatureImplemented": true,
+    "testIdentifier": "authorization-code-flow",
+    "testName": "Authorization Code Flow",
+    "testDescription": "The Authorization Code Flow allows Sellers to authenticate with Booking Partners",
+    "doesNotUseOpportunitiesMode": true,
+    "surviveAuthenticationFailure": true
+  },
+  "implemented": true,
+  "testFileIdentifier": "booking-partner-authentication authorization-code-flow _NoFlow_ _NoOpportunityType_",
+  "suites": [
+    [
+      "booking-partner-authentication",
+      "authorization-code-flow",
+      "_NoFlow_",
+      "_NoOpportunityType_"
+    ],
+    [
+      "booking-partner-authentication",
+      "authorization-code-flow",
+      "_NoFlow_",
+      "_NoOpportunityType_",
+      "Open ID Connect Authentication"
+    ]
+  ],
+  "title": "booking-partner-authentication >> authorization-code-flow",
+  "workingLog": "",
+  "specs": {
+    "booking-partner-authentication,authorization-code-flow,_NoFlow_,_NoOpportunityType_,Open ID Connect Authentication": [
+      "should complete Discovery successfully",
+      "should complete Authorization Code Flow successfully",
+      "should include expected `https://openactive.io/sellerId` claim in `id_token`",
+      "should return claims within `id_token` as defined in specification",
+      "should complete token refresh successfully"
+    ]
+  },
+  "description": "The Authorization Code Flow allows Sellers to authenticate with Booking Partners",
+  "baseAncestorTitles": [
+    "booking-partner-authentication",
+    "authorization-code-flow",
+    "_NoFlow_",
+    "_NoOpportunityType_"
+  ]
+}

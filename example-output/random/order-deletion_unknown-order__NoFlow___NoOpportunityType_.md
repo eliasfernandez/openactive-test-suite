@@ -1,0 +1,51 @@
+[< Return to Summary](summary.md) | File Generated: Fri Jul 22 2022 10:49:22 GMT+0000 (Coordinated Universal Time)
+
+# order-deletion >> unknown-order
+
+**Booking Flow:** 
+
+**Opportunity Type:** 
+
+**Feature:** Core / Order Deletion Endpoint (Implemented) 
+
+**Test:**  Expect a UnknownOrderError for an Order that does not exist
+
+Runs Order Deletion for a non-existent Order (with a fictional UUID), expecting an UnknownOrderError error to be returned
+
+### Running only this test
+
+```bash
+npm start -- --runInBand test/features/core/order-deletion/implemented/unknown-order-test.js
+```
+
+---
+
+✅ 2 passed with 0 failures, 0 warnings and 0 suggestions 
+
+---
+
+
+## Order Deletion
+
+### delete-order Request
+DELETE https://localhost:5001/api/openbooking/orders/22446dfc-baea-4115-8b4e-81ebc9514d2b
+
+* **Content-Type:** `"application/vnd.openactive.booking+json; version=1"`
+* **Authorization:** `"Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkIwNEY3QjkxREUzQjk0NzhDNjE4MzNGQjI0QUE1Q0RCIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTg0ODU2NTYsImV4cCI6MTY1ODQ4OTI1NiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMyIsImF1ZCI6Im9wZW5ib29raW5nIiwiY2xpZW50X2lkIjoiNTYwZGJjNzUtZTQ0Yy00YjAzLWExMGMtOTIxMTk3YWFlM2ExIiwiaHR0cHM6Ly9vcGVuYWN0aXZlLmlvL2NsaWVudElkIjoiNTYwZGJjNzUtZTQ0Yy00YjAzLWExMGMtOTIxMTk3YWFlM2ExIiwic3ViIjoiMTAwIiwiYXV0aF90aW1lIjoxNjU4NDg1NjU1LCJpZHAiOiJsb2NhbCIsImh0dHBzOi8vb3BlbmFjdGl2ZS5pby9zZWxsZXJJZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEvYXBpL2lkZW50aWZpZXJzL3NlbGxlcnMvMSIsImp0aSI6IjkxQTNBNUUzMkU1NzZEODEyNkNGMjNCMDNFQkUzMUFBIiwic2lkIjoiMUFEM0IxMEQ5MDA4QkY0NzREMThFRTU2MzZEMDVBREYiLCJpYXQiOjE2NTg0ODU2NTYsInNjb3BlIjpbIm9wZW5pZCIsIm9wZW5hY3RpdmUtb3BlbmJvb2tpbmciLCJvcGVuYWN0aXZlLWlkZW50aXR5Iiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.a2EuRMF8HKqvnIK46S7jGAnFYJTLs5usIok3hM1GayeDD5bQGinKSWhljkFFzPUIey5JBLEDu-ncYu-gmWg85CyMyWM9tUvfXdyzUDelvQDh3aKsUQ82RB-flVXtzeTGkWKx57d03Cfzne_1lnhP0C9P6FWsUueTy_yw_4txHVgbA4y7FYcos624uxw0DUDYakjtSHoOQpXsWzzYUp20Ax_cxJC_zvpslDxQBFX3jTSXKDurUmkVGcFDiC-sRZLvRw9A5iAscUsSLbZBLF-oBQJOYFcXXeT2UsdJLx15MUh9_zKZ932UtV3XtWf8F47Dw8uSfvOl41VL7Q-zTfwKKg"`
+
+
+---
+Response status code: 404 Not Found. Responded in 88.758609ms.
+```json
+{
+  "@context": "https://openactive.io/",
+  "@type": "UnknownOrderError",
+  "name": "The Booking System has no 'Order' matching the one requested.",
+  "statusCode": 404
+}
+```
+### Specs
+* ✅ noop
+* ✅ should return a response containing `"@type": "UnknownOrderError"` with status code `404`
+
+
